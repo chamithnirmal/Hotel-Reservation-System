@@ -1,0 +1,427 @@
+import {
+  User,
+  Hotel,
+  Venue,
+  Package,
+  Reservation,
+  Review,
+  Notification,
+} from './types'
+
+// Mock Users
+export const mockUsers: Record<string, User> = {
+  customer1: {
+    id: 'customer1',
+    email: 'jayani@example.com',
+    name: 'Jayani Wijesinghe',
+    phone: '+94 (0)71 456 7890',
+    avatar: '/placeholder-user.jpg',
+    role: 'customer',
+    createdAt: '2024-01-15',
+  },
+  manager1: {
+    id: 'manager1',
+    email: 'dilshan@capelhotels.lk',
+    name: 'Dilshan Kapoor',
+    phone: '+94 (0)11 234 5678',
+    avatar: '/placeholder-user.jpg',
+    role: 'manager',
+    createdAt: '2023-06-20',
+  },
+  admin1: {
+    id: 'admin1',
+    email: 'admin@eventstay.lk',
+    name: 'Admin User',
+    avatar: '/placeholder-user.jpg',
+    role: 'admin',
+    createdAt: '2023-01-01',
+  },
+}
+
+// Mock Hotels
+export const mockHotels: Hotel[] = [
+  {
+    id: 'h1',
+    name: 'The Grand Mahakola',
+    description:
+      'Premier luxury hotel in Kandy with stunning views of the historic city and Lake Kandy. Perfect for weddings, conferences, and special celebrations.',
+    location: 'Kandy, Central Province',
+    address: '123 Hill View Road, Kandy 20000',
+    phone: '+94 (0)81 223 3344',
+    email: 'events@grandmahakola.lk',
+    rating: 4.8,
+    reviews: 342,
+    image: '/placeholder.jpg',
+    facilities: ['WiFi', 'Restaurant', 'Bar', 'Gym', 'Spa', 'Parking', 'Pool'],
+    managerId: 'manager1',
+    verified: 'approved',
+    createdAt: '2023-06-01',
+  },
+  {
+    id: 'h2',
+    name: 'Colombo Belle Vue',
+    description:
+      'Contemporary 5-star hotel in the heart of Colombo with rooftop venue and contemporary catering services.',
+    location: 'Colombo 3',
+    address: '456 Galle Face Promenade, Colombo 3',
+    phone: '+94 (0)11 234 5678',
+    email: 'events@colombobelle.lk',
+    rating: 4.7,
+    reviews: 298,
+    image: '/placeholder.jpg',
+    facilities: ['WiFi', 'Restaurant', 'Bar', 'Gym', 'Business Center', 'Pool'],
+    managerId: 'manager1',
+    verified: 'approved',
+    createdAt: '2023-07-10',
+  },
+  {
+    id: 'h3',
+    name: 'Mount Haven Resort',
+    description:
+      'Boutique mountain resort near Nuwara Eliya with panoramic views. Ideal for intimate weddings and corporate retreats.',
+    location: 'Nuwara Eliya, Highlands',
+    address: '789 Gregory Lake Road, Nuwara Eliya 22200',
+    phone: '+94 (0)52 222 2222',
+    email: 'events@mounthaven.lk',
+    rating: 4.6,
+    reviews: 187,
+    image: '/placeholder.jpg',
+    facilities: ['WiFi', 'Restaurant', 'Spa', 'Hiking', 'Lake View'],
+    managerId: 'manager1',
+    verified: 'approved',
+    createdAt: '2023-08-15',
+  },
+  {
+    id: 'h4',
+    name: 'Sunset Paradise Galle',
+    description:
+      'Oceanfront luxury resort with panoramic ocean views. Perfect for destination weddings and beach celebrations.',
+    location: 'Galle, Southern Province',
+    address: '321 Beach Road, Galle 90000',
+    phone: '+94 (0)91 444 4444',
+    email: 'events@sunsetparadise.lk',
+    rating: 4.9,
+    reviews: 456,
+    image: '/placeholder.jpg',
+    facilities: ['Beach Access', 'Restaurant', 'Bar', 'Water Sports', 'Spa', 'Pool'],
+    managerId: 'manager1',
+    verified: 'approved',
+    createdAt: '2023-05-20',
+  },
+]
+
+// Mock Venues
+export const mockVenues: Venue[] = [
+  {
+    id: 'v1',
+    hotelId: 'h1',
+    name: 'Royal Ballroom',
+    description:
+      'Grand 200-seat ballroom with crystal chandeliers, elegant décor, and flexible layouts.',
+    capacity: 200,
+    area: 800,
+    image: '/placeholder.jpg',
+    facilities: ['AC', 'Sound System', 'Lighting', 'Dance Floor', 'Bar'],
+    eventTypes: ['wedding', 'conference', 'corporate'],
+  },
+  {
+    id: 'v2',
+    hotelId: 'h1',
+    name: 'Lake Terrace',
+    description:
+      'Scenic outdoor terrace overlooking Lake Kandy. Perfect for cocktail receptions and intimate gatherings.',
+    capacity: 150,
+    area: 600,
+    image: '/placeholder.jpg',
+    facilities: ['Outdoor Seating', 'Catering', 'Lighting', 'Heating'],
+    eventTypes: ['wedding', 'birthday', 'anniversary'],
+  },
+  {
+    id: 'v3',
+    hotelId: 'h2',
+    name: 'Sky Garden Rooftop',
+    description:
+      'Stunning rooftop venue with panoramic city views. Modern amenities with traditional elegance.',
+    capacity: 250,
+    area: 1000,
+    image: '/placeholder.jpg',
+    facilities: ['Rooftop Bar', 'AV Equipment', 'WiFi', 'Private Entrance'],
+    eventTypes: ['wedding', 'conference', 'corporate'],
+  },
+  {
+    id: 'v4',
+    hotelId: 'h3',
+    name: 'Mountain View Hall',
+    description:
+      'Contemporary hall with floor-to-ceiling windows showcasing mountain vistas.',
+    capacity: 120,
+    area: 500,
+    image: '/placeholder.jpg',
+    facilities: ['Windows', 'Projector', 'Sound System', 'Breakout Rooms'],
+    eventTypes: ['conference', 'corporate', 'birthday'],
+  },
+  {
+    id: 'v5',
+    hotelId: 'h4',
+    name: 'Ocean Front Pavilion',
+    description: 'Luxury beachfront pavilion with direct ocean access and stunning sunsets.',
+    capacity: 180,
+    area: 700,
+    image: '/placeholder.jpg',
+    facilities: ['Beach Access', 'Catering Kitchen', 'AV Setup', 'Lighting'],
+    eventTypes: ['wedding', 'birthday', 'anniversary'],
+  },
+]
+
+// Mock Packages
+export const mockPackages: Package[] = [
+  {
+    id: 'p1',
+    venueId: 'v1',
+    name: 'Premium Wedding Package',
+    description: 'All-inclusive wedding package with catering, decoration, and entertainment.',
+    eventType: 'wedding',
+    guestRange: { min: 100, max: 200 },
+    price: 350000, // LKR
+    includes: [
+      'Venue rental (8 hours)',
+      '4-course dinner',
+      'Wedding cake',
+      'Floral decorations',
+      'DJ and dance floor',
+      'Complimentary suite night',
+      'Welcome drinks',
+    ],
+    image: '/placeholder.jpg',
+  },
+  {
+    id: 'p2',
+    venueId: 'v1',
+    name: 'Corporate Conference Package',
+    description:
+      'Complete conference setup with AV, catering, and support staff for full day.',
+    eventType: 'conference',
+    guestRange: { min: 50, max: 200 },
+    price: 180000, // LKR
+    includes: [
+      'Venue rental (10 hours)',
+      'Projector & screen setup',
+      'WiFi & tech support',
+      'Coffee & tea breaks',
+      'Lunch & refreshments',
+      'Parking',
+      'Audio recording',
+    ],
+    image: '/placeholder.jpg',
+  },
+  {
+    id: 'p3',
+    venueId: 'v2',
+    name: 'Intimate Celebration Package',
+    description: 'Perfect for birthday, anniversary, or small celebration events.',
+    eventType: 'birthday',
+    guestRange: { min: 30, max: 150 },
+    price: 95000, // LKR
+    includes: [
+      'Venue rental (4 hours)',
+      'Buffet dinner',
+      'Birthday cake',
+      'Decorations',
+      'Music system',
+      'Parking',
+      'Event coordinator',
+    ],
+    image: '/placeholder.jpg',
+  },
+  {
+    id: 'p4',
+    venueId: 'v3',
+    name: 'Luxury Wedding Celebration',
+    description: 'Premium wedding with premium catering and décor at rooftop venue.',
+    eventType: 'wedding',
+    guestRange: { min: 150, max: 250 },
+    price: 450000, // LKR
+    includes: [
+      'Venue rental (10 hours)',
+      '5-course premium dinner',
+      'Premium bar service',
+      'Bride & groom suite',
+      'Professional photography (8 hours)',
+      'Floral arrangements',
+      'DJ & lighting design',
+      'Event manager',
+    ],
+    image: '/placeholder.jpg',
+  },
+  {
+    id: 'p5',
+    venueId: 'v4',
+    name: 'Corporate Retreat Package',
+    description: 'All-day corporate retreat with team activities and meals included.',
+    eventType: 'corporate',
+    guestRange: { min: 60, max: 120 },
+    price: 220000, // LKR
+    includes: [
+      'Venue rental (12 hours)',
+      'Breakfast & lunch',
+      'Coffee breaks',
+      'AV & tech support',
+      'Team activity equipment',
+      'Parking & accommodation (1 night)',
+      'Dedicated coordinator',
+    ],
+    image: '/placeholder.jpg',
+  },
+]
+
+// Mock Reservations
+export const mockReservations: Reservation[] = [
+  {
+    id: 'res1',
+    customerId: 'customer1',
+    hotelId: 'h1',
+    venueId: 'v1',
+    packageId: 'p1',
+    eventType: 'wedding',
+    eventDate: '2025-03-15',
+    guestCount: 150,
+    eventDetails: {
+      eventName: "Jayani & Ruwan's Wedding",
+      organizerName: 'Jayani Wijesinghe',
+      organizerPhone: '+94 71 456 7890',
+      organizerEmail: 'jayani@example.com',
+      specialRequests: 'Vegetarian options for 20 guests',
+    },
+    totalPrice: 350000,
+    status: 'approved',
+    createdAt: '2024-12-01',
+    approvedAt: '2024-12-05',
+  },
+  {
+    id: 'res2',
+    customerId: 'customer1',
+    hotelId: 'h2',
+    venueId: 'v3',
+    packageId: 'p4',
+    eventType: 'wedding',
+    eventDate: '2025-06-20',
+    guestCount: 200,
+    eventDetails: {
+      eventName: "Priya & Anil's Wedding Reception",
+      organizerName: 'Jayani Wijesinghe',
+      organizerPhone: '+94 71 456 7890',
+      organizerEmail: 'jayani@example.com',
+      dietaryRequirements: 'Halal',
+      specialRequests: 'Live band performance',
+    },
+    totalPrice: 450000,
+    status: 'pending',
+    createdAt: '2024-12-10',
+  },
+  {
+    id: 'res3',
+    customerId: 'customer1',
+    hotelId: 'h1',
+    venueId: 'v2',
+    packageId: 'p3',
+    eventType: 'birthday',
+    eventDate: '2025-02-28',
+    guestCount: 80,
+    eventDetails: {
+      eventName: "Nimanthi's 30th Birthday",
+      organizerName: 'Jayani Wijesinghe',
+      organizerPhone: '+94 71 456 7890',
+      organizerEmail: 'jayani@example.com',
+    },
+    totalPrice: 95000,
+    status: 'completed',
+    createdAt: '2024-11-15',
+    approvedAt: '2024-11-20',
+  },
+]
+
+// Mock Reviews
+export const mockReviews: Review[] = [
+  {
+    id: 'rev1',
+    reservationId: 'res3',
+    hotelId: 'h1',
+    customerId: 'customer1',
+    rating: 5,
+    title: 'Absolutely Perfect Celebration!',
+    comment:
+      'The Grand Mahakola provided an exceptional experience for Nimanthi\'s birthday. The staff was attentive, the food was delicious, and the lake views made it magical. Highly recommended!',
+    verified: true,
+    createdAt: '2025-03-05',
+  },
+  {
+    id: 'rev2',
+    reservationId: 'res1',
+    hotelId: 'h1',
+    customerId: 'customer1',
+    rating: 5,
+    title: 'Our Dream Wedding Venue',
+    comment:
+      'The Royal Ballroom exceeded all our expectations. Every detail was perfect, from the elegant décor to the impeccable service. We feel so grateful for their wonderful team.',
+    verified: false,
+    createdAt: '2025-03-20',
+  },
+  {
+    id: 'rev3',
+    reservationId: 'res1',
+    hotelId: 'h1',
+    customerId: 'customer1',
+    rating: 4,
+    title: 'Great Experience with Minor Issues',
+    comment:
+      'Overall amazing venue and great catering. The only minor issue was a small delay in serving dessert, but the staff quickly rectified it. Would definitely book again!',
+    verified: true,
+    createdAt: '2025-04-01',
+  },
+]
+
+// Mock Notifications
+export const mockNotifications: Notification[] = [
+  {
+    id: 'notif1',
+    userId: 'customer1',
+    type: 'status',
+    title: 'Reservation Approved!',
+    message:
+      "Your reservation for Jayani & Ruwan's Wedding at The Grand Mahakola has been approved!",
+    read: false,
+    actionUrl: '/customer/reservations/res1',
+    createdAt: '2024-12-05',
+  },
+  {
+    id: 'notif2',
+    userId: 'customer1',
+    type: 'booking',
+    title: 'Booking Confirmed',
+    message:
+      'Your reservation for Nimanthi\'s 30th Birthday has been confirmed. See you on Feb 28, 2025!',
+    read: true,
+    actionUrl: '/customer/reservations/res3',
+    createdAt: '2025-02-25',
+  },
+  {
+    id: 'notif3',
+    userId: 'customer1',
+    type: 'review',
+    title: 'Share Your Experience',
+    message: 'How was your event at The Grand Mahakola? Leave a review and help others!',
+    read: true,
+    actionUrl: '/customer/reviews',
+    createdAt: '2025-03-06',
+  },
+  {
+    id: 'notif4',
+    userId: 'customer1',
+    type: 'promotion',
+    title: 'Special Offer for You',
+    message: 'Get 15% off on your next booking in June. Use code: SUMMER15',
+    read: true,
+    actionUrl: '/hotels',
+    createdAt: '2025-01-20',
+  },
+]

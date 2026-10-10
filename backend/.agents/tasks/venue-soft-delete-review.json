@@ -1,0 +1,14 @@
+{
+  "verdict": "CHANGES_REQUESTED",
+  "findings": [
+    {
+      "issue": "Build evidence missing",
+      "description": "The task required build verification at `.agents/tasks/venue-soft-delete-verify.md`, but this file does not exist. Build and test results must be recorded before approval."
+    },
+    {
+      "issue": "Potential data exposure through findById",
+      "description": "`getVenueById(id)` does not filter on `isActive`, allowing inactive venues to be retrieved if called directly. This may enable lookups of deactivated venues, though the impact depends on whether this endpoint is customer-facing."
+    }
+  ],
+  "reviewDoc": "d:\\SLLIT\\project\\Hotel Reservation System\\backend\\.agents\\tasks\\venue-soft-delete-review.md"
+}

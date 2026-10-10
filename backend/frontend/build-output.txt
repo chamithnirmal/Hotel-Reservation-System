@@ -1,0 +1,82 @@
+
+> hotel-reservation-frontend@0.1.0 build
+> tsc && vite build
+
+src/App.tsx(23,1): error TS6133: 'HotelVerification' is declared but its value is never read.
+src/pages/admin/AllHotels.tsx(50,13): error TS2339: Property 'hotelName' does not exist on type 'HotelResponse'.
+src/pages/admin/AllHotels.tsx(156,34): error TS2339: Property 'hotelName' does not exist on type 'HotelResponse'.
+src/pages/admin/AllHotels.tsx(166,83): error TS2339: Property 'hotelName' does not exist on type 'HotelResponse'.
+src/pages/admin/AllHotels.tsx(187,63): error TS2339: Property 'contactPhone' does not exist on type 'HotelResponse'.
+src/pages/admin/AllHotels.tsx(235,40): error TS2339: Property 'hotelName' does not exist on type 'HotelResponse'.
+src/pages/admin/AllHotels.tsx(244,88): error TS2339: Property 'hotelName' does not exist on type 'HotelResponse'.
+src/pages/admin/AllHotels.tsx(268,78): error TS2339: Property 'contactPhone' does not exist on type 'HotelResponse'.
+src/pages/admin/HotelVerification.tsx(2,55): error TS6133: 'FileText' is declared but its value is never read.
+src/pages/admin/HotelVerification.tsx(67,13): error TS2339: Property 'hotelName' does not exist on type 'HotelWithStats'.
+src/pages/admin/HotelVerification.tsx(242,76): error TS2339: Property 'hotelName' does not exist on type 'HotelWithStats'.
+src/pages/admin/Reports.tsx(3,1): error TS6133: 'Button' is declared but its value is never read.
+src/pages/admin/Reservations.tsx(2,46): error TS6133: 'DollarSign' is declared but its value is never read.
+src/pages/admin/Reservations.tsx(58,19): error TS2339: Property 'packageName' does not exist on type 'ReservationResponse'.
+src/pages/admin/Reservations.tsx(205,83): error TS2339: Property 'contactPhone' does not exist on type 'ReservationResponse'.
+src/pages/admin/Reservations.tsx(293,89): error TS2339: Property 'contactPhone' does not exist on type 'ReservationResponse'.
+src/pages/admin/Reservations.tsx(348,89): error TS2339: Property 'packageName' does not exist on type 'ReservationResponse'.
+src/pages/admin/Reservations.tsx(366,36): error TS2339: Property 'rejectionReason' does not exist on type 'ReservationResponse'.
+src/pages/admin/Reservations.tsx(369,76): error TS2339: Property 'rejectionReason' does not exist on type 'ReservationResponse'.
+src/pages/admin/Users.tsx(2,69): error TS6133: 'Eye' is declared but its value is never read.
+src/pages/Home.tsx(3,22): error TS6133: 'Bell' is declared but its value is never read.
+src/pages/Home.tsx(3,39): error TS6133: 'CalendarCheck' is declared but its value is never read.
+src/pages/Home.tsx(3,54): error TS6133: 'CalendarDays' is declared but its value is never read.
+src/pages/Home.tsx(3,68): error TS6133: 'CheckCircle2' is declared but its value is never read.
+src/pages/Home.tsx(3,82): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/pages/Home.tsx(3,95): error TS6133: 'CircleDollarSign' is declared but its value is never read.
+src/pages/Home.tsx(3,113): error TS6133: 'Eye' is declared but its value is never read.
+src/pages/Home.tsx(3,125): error TS6133: 'Hotel' is declared but its value is never read.
+src/pages/Home.tsx(3,132): error TS6133: 'LayoutDashboard' is declared but its value is never read.
+src/pages/Home.tsx(3,163): error TS6133: 'Plus' is declared but its value is never read.
+src/pages/Home.tsx(3,206): error TS6133: 'Users' is declared but its value is never read.
+src/pages/Home.tsx(3,213): error TS6133: 'BarChart3' is declared but its value is never read.
+src/pages/Home.tsx(3,224): error TS6133: 'SlidersHorizontal' is declared but its value is never read.
+src/pages/Home.tsx(3,243): error TS6133: 'Filter' is declared but its value is never read.
+src/pages/Home.tsx(3,251): error TS6133: 'MoreHorizontal' is declared but its value is never read.
+src/pages/Home.tsx(3,267): error TS6133: 'PartyPopper' is declared but its value is never read.
+src/pages/Home.tsx(3,295): error TS6133: 'Award' is declared but its value is never read.
+src/pages/Home.tsx(3,302): error TS6133: 'Clock3' is declared but its value is never read.
+src/pages/Home.tsx(3,310): error TS6133: 'Download' is declared but its value is never read.
+src/pages/Home.tsx(3,320): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/pages/Home.tsx(3,333): error TS6133: 'Settings' is declared but its value is never read.
+src/pages/Home.tsx(6,1): error TS6133: 'UserRole' is declared but its value is never read.
+src/pages/Home.tsx(9,7): error TS6133: 'money' is declared but its value is never read.
+src/pages/Home.tsx(24,10): error TS6133: 'Badge' is declared but its value is never read.
+src/pages/HotelDetails.tsx(4,56): error TS6133: 'DollarSign' is declared but its value is never read.
+src/pages/HotelDetails.tsx(5,64): error TS6133: 'Sparkles' is declared but its value is never read.
+src/pages/HotelDetails.tsx(6,3): error TS6133: 'MessageSquare' is declared but its value is never read.
+src/pages/HotelDetails.tsx(495,73): error TS2339: Property 'area' does not exist on type 'VenueResponse'.
+src/pages/HotelDetails.tsx(502,73): error TS2339: Property 'facilityCount' does not exist on type 'VenueResponse'.
+src/pages/Hotels.tsx(3,48): error TS6133: 'Search' is declared but its value is never read.
+src/pages/Hotels.tsx(3,62): error TS6133: 'SlidersHorizontal' is declared but its value is never read.
+src/pages/manager/Availability.tsx(3,10): error TS6133: 'venueAvailabilityService' is declared but its value is never read.
+src/pages/manager/MyHotel.tsx(30,1): error TS6133: 'Badge' is declared but its value is never read.
+src/pages/manager/MyHotel.tsx(97,43): error TS2551: Property 'getAllReviews' does not exist on type 'ReviewService'. Did you mean 'getMyReviews'?
+src/pages/manager/MyHotel.tsx(100,25): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/pages/manager/Notifications.tsx(1,16): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/pages/manager/Notifications.tsx(3,1): error TS6133: 'Badge' is declared but its value is never read.
+src/pages/manager/Packages.tsx(28,1): error TS6133: 'Badge' is declared but its value is never read.
+src/pages/manager/Packages.tsx(267,9): error TS6133: 'getEventTypeBadgeColor' is declared but its value is never read.
+src/pages/manager/Pricing.tsx(133,55): error TS6133: 'priceIdx' is declared but its value is never read.
+src/pages/manager/Profile.tsx(29,43): error TS2339: Property 'getUserProfile' does not exist on type 'UserService'.
+src/pages/manager/Profile.tsx(60,27): error TS2339: Property 'updateUserProfile' does not exist on type 'UserService'.
+src/pages/manager/Reports.tsx(13,10): error TS6133: 'hotelId' is declared but its value is never read.
+src/pages/manager/Reservations.tsx(2,86): error TS6133: 'DollarSign' is declared but its value is never read.
+src/pages/manager/Reservations.tsx(148,9): error TS2339: Property 'eventName' does not exist on type 'ReservationResponse'.
+src/pages/manager/Reservations.tsx(340,88): error TS2339: Property 'eventName' does not exist on type 'ReservationResponse'.
+src/pages/manager/Reviews.tsx(6,1): error TS6133: 'Button' is declared but its value is never read.
+src/pages/manager/Reviews.tsx(12,10): error TS6133: 'hotelId' is declared but its value is never read.
+src/pages/manager/Venues.tsx(7,12): error TS6133: 'ImageIcon' is declared but its value is never read.
+src/pages/manager/Venues.tsx(169,15): error TS2339: Property 'image' does not exist on type 'VenueResponse'.
+src/pages/manager/Venues.tsx(170,55): error TS2339: Property 'image' does not exist on type 'VenueResponse'.
+src/pages/Workspace.tsx(24,1): error TS6192: All imports in import declaration are unused.
+src/pages/Workspace.tsx(197,10): error TS6133: 'reviews' is declared but its value is never read.
+src/pages/Workspace.tsx(199,10): error TS6133: 'users' is declared but its value is never read.
+src/pages/Workspace.tsx(459,58): error TS2339: Property 'eventName' does not exist on type 'ReservationResponse'.
+src/services/index.ts(14,29): error TS2614: Module '"./userService"' has no exported member 'UpdateProfileRequest'. Did you mean to use 'import UpdateProfileRequest from "./userService"' instead?
+src/services/index.ts(14,51): error TS2614: Module '"./userService"' has no exported member 'ChangePasswordRequest'. Did you mean to use 'import ChangePasswordRequest from "./userService"' instead?
+src/services/index.ts(20,52): error TS2614: Module '"./reviewService"' has no exported member 'VenueRatingStats'. Did you mean to use 'import VenueRatingStats from "./reviewService"' instead?
